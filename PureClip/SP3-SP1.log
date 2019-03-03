@@ -1,0 +1,18 @@
+Protein-RNA crosslink site detection 
+===============
+
+Created look-up table for values from -2000 to 0 with step size 0.00333333 (size: 600000).
+Loading reference ... 
+DBL_MIN_10_EXP: -307 LDBL_MIN_10_EXP: -4931
+ computed prior_kdeThreshold: 0.0558519
+Use bandwidth: 50
+Use KDE threshold: 0.00797885
+Use bandwidth to estimate n: 50
+  Compute SLR ... 
+  Compute KDEs ... 
+  Estiamte Ns ... 1
+  Parse input BAM, get truncCounts, compute KDEs ... 
+Open Bam and Bai file ... (strand: 0)
+Open Bam and Bai file ... (strand: 1)
+Prior ML estimation of density distribution parameters using predefined cutoff ...
+Estimate parameters of compound gamma distribution:

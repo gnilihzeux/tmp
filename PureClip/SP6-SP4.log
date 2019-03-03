@@ -1,0 +1,490 @@
+Protein-RNA crosslink site detection 
+===============
+
+Created look-up table for values from -2000 to 0 with step size 0.00333333 (size: 600000).
+Loading reference ... 
+DBL_MIN_10_EXP: -307 LDBL_MIN_10_EXP: -4931
+ computed prior_kdeThreshold: 0.0558519
+Use bandwidth: 50
+Use KDE threshold: 0.00797885
+Use bandwidth to estimate n: 50
+  Compute SLR ... 
+  Compute KDEs ... 
+  Estiamte Ns ... 1
+  Parse input BAM, get truncCounts, compute KDEs ... 
+Open Bam and Bai file ... (strand: 0)
+Open Bam and Bai file ... (strand: 1)
+Prior ML estimation of density distribution parameters using predefined cutoff ...
+Estimate parameters of compound gamma distribution:
+*** GAMMA2_REG ***
+    b0:0.142059
+    b1:0.752046
+    k:1.80642
+    tp:0.00797885
+
+Initial gamma1: Run simplex algorithm using different start points.
+Updated parameters of gamma1 distribution using GSL simplex2:
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+Initial gamma2: Run simplex algorithm using different start points.
+Updated parameters of gamma2 distribution using GSL simplex2:
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+ initial transition frequencies: 
+  0: 611048507  178007  1288626  630  
+  1: 177956  9336  609  10  
+  2: 1288685  560  175297905  311857  
+  3: 592  8  311897  11660  
+
+Build HMM ...
+*** Transition probabilitites ***
+    0: 0.997605  0.000290616  0.00210383  1.02854e-06  
+    1: 0.947023  0.0496831  0.0032409  5.32167e-05  
+    2: 0.00728486  3.16565e-06  0.990949  0.00176291  
+    3: 0.00182628  2.46794e-05  0.962179  0.0359702  
+
+Baum-Welch  ...
+            learn binomial parameter
+.. 0th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999424  1.63896e-05  0.000559846  1.53442e-08  
+    1: 0.754333  0.244993  0.000665725  8.5674e-06  
+    2: 0.00578067  1.28234e-07  0.993955  0.000263789  
+    3: 0.000461386  4.83861e-06  0.873922  0.125612  
+
+*** ZTBIN ***
+    p:0.00835651
+
+*** ZTBIN ***
+    p:0.193155
+
+.. 1th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999455  9.96594e-06  0.000535039  1.58887e-09  
+    1: 0.617594  0.382318  8.70528e-05  7.37488e-07  
+    2: 0.00555062  1.13468e-08  0.994333  0.000116781  
+    3: 8.23491e-05  6.55872e-07  0.741301  0.258616  
+
+*** ZTBIN ***
+    p:0.00859103
+
+*** ZTBIN ***
+    p:0.248467
+
+.. 2th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.38197e-06  0.000534041  2.22214e-10  
+    1: 0.632044  0.367944  1.16392e-05  4.11922e-08  
+    2: 0.00554024  1.25181e-09  0.994377  0.0001  
+    3: 1.36492e-05  4.69011e-08  0.70059  0.299396  
+
+*** ZTBIN ***
+    p:0.0087091
+
+*** ZTBIN ***
+    p:0.297509
+
+.. 3th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.30928e-06  0.000534006  3.27847e-11  
+    1: 0.665619  0.334379  1.67047e-06  2.13715e-09  
+    2: 0.00553972  1.49654e-10  0.994385  0.0001  
+    3: 2.40102e-06  2.94663e-09  0.709866  0.290132  
+
+*** ZTBIN ***
+    p:0.00875699
+
+*** ZTBIN ***
+    p:0.331382
+
+.. 4th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.3181e-06  0.000534009  4.85872e-12  
+    1: 0.689904  0.310096  2.40816e-07  1.1321e-10  
+    2: 0.0055397  1.85974e-11  0.994387  0.0001  
+    3: 4.44648e-07  1.92552e-10  0.724085  0.275914  
+
+*** ZTBIN ***
+    p:0.00878058
+
+*** ZTBIN ***
+    p:0.352188
+
+.. 5th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.33126e-06  0.000534011  7.25086e-13  
+    1: 0.705542  0.294458  3.48388e-08  6.23582e-12  
+    2: 0.0055397  2.37005e-12  0.994388  0.0001  
+    3: 8.43812e-08  1.30566e-11  0.734887  0.265113  
+
+*** ZTBIN ***
+    p:0.00879476
+
+*** ZTBIN ***
+    p:0.365177
+
+.. 6th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.34652e-06  0.000534012  1.08803e-13  
+    1: 0.715285  0.284715  5.04853e-09  3.56289e-13  
+    2: 0.0055397  3.06554e-13  0.994388  0.0001  
+    3: 1.62054e-08  9.09455e-13  0.741048  0.258952  
+
+*** ZTBIN ***
+    p:0.00880311
+
+*** ZTBIN ***
+    p:0.37283
+
+.. 7th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.35425e-06  0.000534013  1.63687e-14  
+    1: 0.720918  0.279082  7.3231e-10  2.08236e-14  
+    2: 0.0055397  3.99846e-14  0.994389  0.0001  
+    3: 3.13533e-09  6.44532e-14  0.744605  0.255395  
+
+*** ZTBIN ***
+    p:0.00880838
+
+*** ZTBIN ***
+    p:0.377768
+
+.. 8th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.35944e-06  0.000534013  2.46624e-15  
+    1: 0.724431  0.275569  1.0631e-10  1.23359e-15  
+    2: 0.00553971  5.24119e-15  0.994389  0.0001  
+    3: 6.09601e-10  4.60913e-15  0.746886  0.253114  
+
+*** ZTBIN ***
+    p:0.00881168
+
+*** ZTBIN ***
+    p:0.380821
+
+.. 9th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.36264e-06  0.000534013  3.71925e-16  
+    1: 0.726701  0.273299  1.54408e-11  7.36886e-17  
+    2: 0.0055397  6.89106e-16  0.994389  0.0001  
+    3: 1.18852e-10  3.31407e-16  0.748204  0.251796  
+
+*** ZTBIN ***
+    p:0.00881364
+
+*** ZTBIN ***
+    p:0.382621
+
+.. 10th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.36396e-06  0.000534013  5.61142e-17  
+    1: 0.728044  0.271956  2.24327e-12  4.42551e-18  
+    2: 0.0055397  9.07761e-17  0.994389  0.0001  
+    3: 2.32081e-11  2.39108e-17  0.74901  0.25099  
+
+*** ZTBIN ***
+    p:0.00881479
+
+*** ZTBIN ***
+    p:0.383682
+
+.. 11th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.36565e-06  0.000534012  8.46878e-18  
+    1: 0.728827  0.271173  3.25917e-13  2.66642e-19  
+    2: 0.00553971  1.19717e-17  0.994389  0.0001  
+    3: 4.53631e-12  1.72876e-18  0.749521  0.250479  
+
+*** ZTBIN ***
+    p:0.00881548
+
+*** ZTBIN ***
+    p:0.384312
+
+.. 12th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.36592e-06  0.000534012  1.27826e-18  
+    1: 0.729271  0.270729  4.73538e-14  1.60944e-20  
+    2: 0.0055397  1.57977e-18  0.994389  0.0001  
+    3: 8.87131e-13  1.25139e-19  0.749843  0.250157  
+
+*** ZTBIN ***
+    p:0.00881588
+
+*** ZTBIN ***
+    p:0.384691
+
+.. 13th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.36726e-06  0.000534012  1.9298e-19  
+    1: 0.729561  0.270439  6.88002e-15  9.72457e-22  
+    2: 0.00553971  2.08555e-19  0.994389  0.0001  
+    3: 1.73555e-13  9.0649e-21  0.750043  0.249957  
+
+*** ZTBIN ***
+    p:0.00881612
+
+*** ZTBIN ***
+    p:0.384921
+
+.. 14th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
+NOTE: Prevented transition probability '2' -> '3' from dropping below min. value of 0.0001. Set for transitions '2' -> '3' (and if necessary also for '3'->'3') to 0.0001.
+                        updateDensityParams() 
+*** GAMMA2_REG ***
+    b0:-0.369951
+    b1:0.734575
+    k:2.99812
+    tp:0.00797885
+
+*** GAMMA2_REG ***
+    b0:0.691276
+    b1:0.775767
+    k:3.45172
+    tp:0.00797885
+
+*** Transition probabilitites ***
+    0: 0.999457  9.36679e-06  0.000534012  2.91349e-20  
+    1: 0.729712  0.270288  9.99705e-16  5.88048e-23  
+    2: 0.0055397  2.75369e-20  0.994389  0.0001  
+    3: 3.39583e-14  6.56932e-22  0.750164  0.249836  
+
+*** ZTBIN ***
+    p:0.00881627
+
+*** ZTBIN ***
+    p:0.385059
+
+.. 15th iteration 
+                        computeEmissionProbs() 

@@ -1,0 +1,58 @@
+Protein-RNA crosslink site detection 
+===============
+
+Created look-up table for values from -2000 to 0 with step size 0.00333333 (size: 600000).
+Loading reference ... 
+DBL_MIN_10_EXP: -307 LDBL_MIN_10_EXP: -4931
+ computed prior_kdeThreshold: 0.0558519
+Use bandwidth: 50
+Use KDE threshold: 0.00797885
+Use bandwidth to estimate n: 50
+  Compute SLR ... 
+  Compute KDEs ... 
+  Estiamte Ns ... 1
+  Parse input BAM, get truncCounts, compute KDEs ... 
+Open Bam and Bai file ... (strand: 0)
+Open Bam and Bai file ... (strand: 1)
+Prior ML estimation of density distribution parameters using predefined cutoff ...
+Estimate parameters of compound gamma distribution:
+*** GAMMA2_REG ***
+    b0:-0.00505911
+    b1:0.73983
+    k:1.65016
+    tp:0.00797885
+
+Initial gamma1: Run simplex algorithm using different start points.
+Updated parameters of gamma1 distribution using GSL simplex2:
+*** GAMMA2_REG ***
+    b0:-0.564137
+    b1:0.713314
+    k:2.76314
+    tp:0.00797885
+
+Initial gamma2: Run simplex algorithm using different start points.
+Updated parameters of gamma2 distribution using GSL simplex2:
+*** GAMMA2_REG ***
+    b0:0.6
+    b1:0.773188
+    k:3.33414
+    tp:0.00797885
+
+ initial transition frequencies: 
+  0: 566756440  144801  1197778  543  
+  1: 144816  7601  488  7  
+  2: 1197801  505  162797637  274511  
+  3: 495  5  274561  9780  
+
+Build HMM ...
+*** Transition probabilitites ***
+    0: 0.997636  0.000254887  0.00210839  9.55818e-07  
+    1: 0.947055  0.0497083  0.00319138  4.5778e-05  
+    2: 0.00729164  3.0742e-06  0.991034  0.00167109  
+    3: 0.00173781  1.75537e-05  0.96391  0.0343349  
+
+Baum-Welch  ...
+            learn binomial parameter
+.. 0th iteration 
+                        computeEmissionProbs() 
+                        computeStatePosteriorsFB() 
